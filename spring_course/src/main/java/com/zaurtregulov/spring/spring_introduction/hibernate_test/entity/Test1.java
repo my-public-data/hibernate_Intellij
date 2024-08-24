@@ -12,7 +12,7 @@ public class Test1 {
         //2) Получаем сессию из SessionFactory factory
         Session session = factory.getCurrentSession();
         //3) Создаем объект класса
-        Employee emp = new Employee("Zaur", "Tregulov", "IT", 500);
+        Employee emp = new Employee("Aleksandr", "Smirnov", "Sales", 300);
 
         try {
         //4) Начинаем транзакцию
@@ -21,6 +21,8 @@ public class Test1 {
             session.save(emp);
         //6) Закрываем транзакцию коммитом или роллбэком - если хотим откатитьь Insert из этой строки
             session.getTransaction().commit();
+
+            System.out.println("Done");
 
         } finally {
         //7Закрываем SessionFactory factory

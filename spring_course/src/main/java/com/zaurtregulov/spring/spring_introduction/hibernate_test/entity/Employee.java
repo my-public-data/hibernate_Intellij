@@ -1,15 +1,13 @@
 package com.zaurtregulov.spring.spring_introduction.hibernate_test.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "employees")
 public class Employee {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name ="id")
     private int id;
 
@@ -32,7 +30,7 @@ public class Employee {
         this.name = name;
         this.surname = surname;
         this.department = department;
-        salary = salary;
+        this.salary = salary;
     }
 
     @Override
